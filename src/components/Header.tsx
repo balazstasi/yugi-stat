@@ -10,10 +10,15 @@ type HeaderProps = {
 export default function Header(props: HeaderProps) {
   const theme = useMantineTheme();
   return (
-    <Container>
+    <Container
+      sx={{
+        marginLeft: 0,
+        alignSelf: "flex-start",
+        marginTop: 32,
+      }}
+    >
       <Flex
         direction="column"
-        justify="center"
         align="left"
         sx={{
           marginBottom: 128,
@@ -22,15 +27,15 @@ export default function Header(props: HeaderProps) {
           borderRadius: 16,
           fontSize: 40,
         }}
-        bg={theme.colors[theme.primaryColor][0]}
+        bg={theme.colors.indigo[2]}
       >
-        <Flex direction="row" align="center"  >
-          <IconCards size={40} color={theme.colors.purple[9]} />
-          <Title color="purple">
+        <Flex direction="row" align="center">
+          <IconCards size={40} color={theme.colors.indigo[9]} />
+          <Title color={theme.colors.indigo[9]}>
             <Text>{props.title}</Text>
           </Title>
         </Flex>
-        <Text ml={8} size={12} weight={500} color={theme.colors.purple[9]}>
+        <Text ml={8} size={12} weight={500} color={theme.colors.indigo[9]} align="end">
           ...{props.description}
         </Text>
       </Flex>

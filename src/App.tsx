@@ -1,4 +1,4 @@
-import { MantineProvider, useMantineTheme } from "@mantine/core";
+import { Container, MantineProvider, useMantineTheme } from "@mantine/core";
 import Header from "./components/Header";
 import Deck from "./views/deck";
 
@@ -6,9 +6,10 @@ function App() {
   const theme = useMantineTheme();
   return (
     <MantineProvider
+      withGlobalStyles
       theme={{
         colorScheme: "dark",
-        primaryColor: "purple",
+        primaryColor: "indigo",
         colors: {
           purple: [
             "#BC94EE",
@@ -25,8 +26,19 @@ function App() {
         },
       }}
     >
-      <Header title="YuGiStat" description="But I bricked man!" />
-      <Deck />
+      <Container
+        fluid
+        bg={theme.colors.indigo[9]}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100vw",
+          height: "100vh",
+        }}
+      >
+        <Header title="YuGiStat" description="But I bricked man!" />
+        <Deck />
+      </Container>
     </MantineProvider>
   );
 }
