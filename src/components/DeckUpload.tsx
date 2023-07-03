@@ -1,7 +1,7 @@
 import { Group, Text, useMantineTheme, rem } from "@mantine/core";
 import { IconX, IconCards, IconCheck } from "@tabler/icons-react";
 import { Dropzone, DropzoneProps } from "@mantine/dropzone";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLogger } from "@mantine/hooks";
 
 export function DeckUpload(props: Partial<DropzoneProps>) {
